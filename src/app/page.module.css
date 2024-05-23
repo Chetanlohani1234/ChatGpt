@@ -1,0 +1,23 @@
+.mainpage {
+  display: flex;
+  flex-direction: row;
+  /* background-color: yellow; */
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Roboto', sans-serif;  
+  /* color: #333;
+  background-color: black; */
+  background-color: rgba(80,10,130,70) !important;
+
+}
+
+.leftOut{
+  /* background-color: red; */
+  width: 20%;
+  overflow: hidden;
+}
+.rightOut{
+  width: 80%;
+  /* height: 100%; */
+  overflow: hidden;
+}
