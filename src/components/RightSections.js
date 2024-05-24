@@ -159,7 +159,7 @@ const RightSections = () => {
               <div className="card-header msg_head">
                 <div className="d-flex bd-highlight">
                   <div className="user_info">
-                    <span>Chat with AI</span>
+                    <span>Root AI</span>
                   </div>
                 </div>
               </div>

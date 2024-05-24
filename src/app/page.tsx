@@ -20,10 +20,13 @@ export default function Home() {
       {!isLoggedIn ? (
         <Login onLogin={handleLogin} />
       ) : (
+
+        // <RightSections />
+      
         <div className={styles.mainpage}>
-          <div className={styles.leftOut}>
+          {/* <div className={styles.leftOut}>
             <LeftSection />
-          </div>
+          </div> */}
           <div className={styles.rightOut}>
             {/* <RightSection /> */}
             <RightSections />
