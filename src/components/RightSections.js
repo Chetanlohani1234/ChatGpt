@@ -31,7 +31,8 @@ const RightSections = () => {
     useEffect(() => {
       const fetchConversationHistory = async () => {
         const apiUrl = 'https://api-es5l.onrender.com/get-chat'; // Your API endpoint for fetching history
-    
+         
+         
         try {
           const response = await axios.post(apiUrl, {
             token,
@@ -66,7 +67,7 @@ const RightSections = () => {
       };
     
       fetchConversationHistory();
-    }, [token, userId, inputMessage]);
+    }, [token, userId]);
     
     useEffect(() => {
       chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -97,6 +98,7 @@ const RightSections = () => {
 
     const prompt = inputMessage;
     const apiUrl = 'https://api-es5l.onrender.com/get-chat'; // Your API endpoint
+    //const timestamp = new Date().toLocaleTimeString();
 
     try {
       const response = await axios.post(apiUrl, {
@@ -190,13 +192,13 @@ const RightSections = () => {
             <div className={`d-flex justify-content-${msg.role === 'user' ? 'end' : 'start'} mb-4`}>
               <div className={`msg_cotainer${msg.role === 'user' ? '_send' : ''}`}>
                 {msg.content}
-                <span className={`msg_time${msg.role === 'user' ? '_send' : ''}`}>Now</span>
+                <span className={`msg_time${msg.role === 'user' ? '_send' : ''}`}> {new Date(msg.timestamp * 1000).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}</span>
               </div>
             </div>
             <div className={`d-flex justify-content-${nextMessage.role === 'user' ? 'end' : 'start'} mb-4`}>
               <div className={`msg_cotainer${nextMessage.role === 'user' ? '_send' : ''}`}>
                 {nextMessage.content}
-                <span className={`msg_time${nextMessage.role === 'user' ? '_send' : ''}`}>Now</span>
+                <span className={`msg_time${nextMessage.role === 'user' ? '_send' : ''}`}> {new Date(msg.timestamp * 1000).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}</span>
               </div>
             </div>
           </React.Fragment>
@@ -208,8 +210,8 @@ const RightSections = () => {
                       <div key={index} className={`d-flex justify-content-${msg.from === 'user' ? 'end' : 'start'} mb-4`}>
                         <div className={`msg_cotainer${msg.from === 'user' ? '_send' : ''}`}>
                           {msg.text}
-                          <span className={`msg_time${msg.from === 'user' ? '_send' : ''}`}>Now</span>
-                        </div>
+                          <span className={`msg_time${msg.from === 'user' ? '_send' : ''}`}>{Now}</span>
+                       </div>
                       </div>
                     ))}
 
